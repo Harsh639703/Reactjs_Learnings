@@ -7,14 +7,24 @@ function App() {
   let [counter,setCounter] = useState(0)
 
   const addValue = ()=>{
+    if(counter+1>20){
+      alert("You can not increase the counter greater than 20")
+    }else{
       counter=counter+1
       setCounter(counter)
+    }
+      
   }
 
 
 const subtractVal =()=>{
+  if(counter -1 < 0){
+    alert("You can not decrease the counter less than 0")
+  }else{
+    setCounter(counter - 1)
+  }
   
-  setCounter(counter - 1)
+  
 }
 
   return (
