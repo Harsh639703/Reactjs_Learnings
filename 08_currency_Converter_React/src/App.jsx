@@ -10,17 +10,17 @@ function App() {
   const [convertedAmount, setConvertedAmount] = useState(0)
   const Currencyinfo =useCurrency(from)
   const options = Object.keys(Currencyinfo)
-console.log({from});
+
   const swap = ()=>{
     setFrom(to)
-    setFrom(from)
+    setTo(from)
     setConvertedAmount(amount)
     setAmount(convertedAmount)
   }
   const convert =()=>{
     setConvertedAmount(amount*Currencyinfo[to])
   }
-console.log({options});
+
   return (
     <div
         className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
@@ -41,17 +41,17 @@ console.log({options});
                             label="From"
                             amount={amount}
                             currencyOptions={options}
-                            onCurrencyChange={(currency)=>
-                              setAmount(amount)}
-                              selectCurrency={from}
-                              onAmountChange={(amount)=>setAmount(amount)}
+                            onCurrencyChange={(currency)=>setAmount(amount)}
+                            selectCurrency={from}
+                            onAmountChange={(amount)=>setAmount(amount)}
                             
                         />
                     </div>
                     <div className="relative w-full h-0.5">
                         <button
                             type="button"
-                            className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-white rounded-md bg-blue-600 text-white px-2 py-0.5" onClick={swap}
+                            className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-white rounded-md bg-blue-600 text-white px-2 py-0.5" 
+                            onClick={swap}
                             
                         >
                             swap
@@ -62,10 +62,9 @@ console.log({options});
                             label="To"
                             amount={convertedAmount}
                             currencyOptions={options}
-                            onCurrencyChange={(currency)=>
-                              setTo(currency)}
-                              selectCurrency={from}
-                              amountDisable
+                            onCurrencyChange={(currency)=> setTo(currency)}
+                            selectCurrency={from}
+                            amountDisable
                             
                         />
                     </div>

@@ -5,7 +5,7 @@ function Boxo({
   amount,
   onAmountChange,
   onCurrencyChange,
-  currencyOption=[],
+  currencyOptions=[],
   SelectCurrency="usd",
   amountDisable=false,
   currencyDisable=false,
@@ -14,7 +14,7 @@ function Boxo({
   className = "",
 }) {
     const amountInputId=useId()
-    const myoptions = ["usd","inr"]
+   
   return (
 
     <div className={`bg-white p-3 rounded-lg text-sm flex ${className} `}>
@@ -35,7 +35,7 @@ function Boxo({
         <p className="text-black/40 mb-2 w-full">Currency Type</p>
         <select className="rounded-lg px-1 py-1 bg-gray-100 cursor-pointer outline-none" value={SelectCurrency} 
         onChange={(e)=> onCurrencyChange && onCurrencyChange(e.target.value)} disabled={currencyDisable}>
-          {myoptions.map((currency)=>(
+          {currencyOptions.map((currency)=>(
 
             <option key={currency} value={currency}>{currency}</option>
            
