@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './Layout.jsx'
@@ -8,6 +7,8 @@ import Layout from './Layout.jsx'
 import Home from './Home/Home'
 import About from './components/About/About'
 import Contact from './components/Contact/Contact'
+import User from './components/User/User.jsx'
+import Github, { githubInfoLoader } from './components/Github/Github.jsx'
 
 
 const router = createBrowserRouter([
@@ -26,6 +27,15 @@ const router = createBrowserRouter([
       {
         path:'contact',
         element:<Contact />
+      },
+      {
+        path:'user/:userid',
+        element:<User />
+      },
+      {
+        loader: githubInfoLoader,
+        path:'github',
+        element:<Github />
       }
     ]
   }
@@ -33,5 +43,5 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RouterProvider router={router}/>
-  </React.StrictMode > ,
+  </React.StrictMode > 
 )
