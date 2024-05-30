@@ -13,7 +13,7 @@ function Github() {
     // },[])
     return (
         <div className='bg-gray-700 text-white m-4 p-3 text-3xl text-center'>Github Public Repositories : {data.public_repos}  
-        <img src={data.avatar_url} alt="Git pic" width={200}  />
+        <img src={data.avatar_url} alt="Git pic"width={200}  />
         </div>
 
         
